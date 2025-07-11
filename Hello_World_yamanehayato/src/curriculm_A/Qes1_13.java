@@ -19,9 +19,9 @@ public class Qes1_13 {
 		myShort = 0;
 		myLong = 0;
 		myInt = 0;
-		myFloat = 0f;
-		myDouble = 0d;
-		myChar = 'a';
+		myFloat = 0.0f;
+		myDouble = 0.0d;
+		myChar = '\u0000';
 		myString = null;
 		myBoolean = false;
 		
@@ -137,6 +137,7 @@ public class Qes1_13 {
 		//13
 		String anser2 = (age/2 >= 25 || high/2 >= 160) ? "true" : "false";
 		System.out.println(anser2);
+		
 	}
 
 }
