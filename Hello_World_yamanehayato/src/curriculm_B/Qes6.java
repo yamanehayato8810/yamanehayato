@@ -45,5 +45,6 @@ public class Qes6 {
 				System.out.println("商品が見つかりません");
 			}
 		}
+		scanner.close();
 	}
 }

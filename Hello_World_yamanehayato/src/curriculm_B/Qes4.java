@@ -8,15 +8,11 @@ public class Qes4 {
 		for (int i = 1; i <= 9; i++) {
 			for (int j = 1; j <= 9; j++) {
 				int ij = i * j;
-				//2桁に満たない場合0をつける処理
-				String i2 = String.format("%02d", i);
-				String j2 = String.format("%02d", j);
-				String ij2 = String.format("%02d", ij);
-				// 掛け算の結果を表示
+				// 2桁に満たない場合0をつける処理and掛け算の表示
 				if (j == 9) {
-					System.out.print(i2 + " * " + j2 + " = " + ij2);
+					System.out.printf("%02d * %02d = %02d", i, j, ij);
 				} else {
-					System.out.print(i2 + " * " + j2 + " = " + ij2 + " || ");
+					System.out.printf("%02d * %02d = %02d || ", i, j, ij);
 				}
 				
 			}

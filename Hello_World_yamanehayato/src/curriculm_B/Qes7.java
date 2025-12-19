@@ -9,8 +9,16 @@ public class Qes7 {
 		//スキャナーの初期化
 		Scanner scanner = new Scanner(System.in);
 		//数字の取得
-		System.out.print("生徒の人数を入力してください(2以上)：");
-		int input = scanner.nextInt();
+		int input;
+		while (true) {
+			System.out.print("生徒の人数を入力してください(2以上)：");
+			input = scanner.nextInt();
+			if (input < 2) {
+				System.out.println("2以上の数字を入力してください");
+			} else {
+				break;
+			}
+		}
 		//科目の配列取得
 		String[] subject = {"英語", "数学", "理科", "社会"};
 		//点数の配列作成
@@ -32,7 +40,8 @@ public class Qes7 {
 			for (int l = 0; l < subject.length; l++) {
 				sum += scores[k][l];
 			}
-			System.out.println((k + 1) + "人目の平均点は" + String.format("%.2f", sum / 4) + "です。");
+			System.out.printf((k + 1) + "人目の平均点は%.2fです。",sum / 4);
+			System.out.println();
 		}
 		System.out.println();
 		//科目の平均点出力処理
@@ -41,7 +50,8 @@ public class Qes7 {
 			for (int n = 0; n < input; n++) {
 				sum += scores[n][m];
 			}
-			System.out.println(subject[m] + "の平均点は" + String.format("%.2f", sum / input) + "です。");
+			System.out.printf(subject[m] + "の平均点は%.2fです。",sum / input);
+			System.out.println();
 		}
 		//全体の平均点出力処理
 		double sum = 0;
@@ -50,7 +60,9 @@ public class Qes7 {
 				sum += scores[o][p];
 			}
 		}
-		System.out.println("全体の平均点は" + String.format("%.2f", sum / (input * subject.length)) + "です。");
+		System.out.printf("全体の平均点は%.2fです。",sum / (input * subject.length));
+		
+		scanner.close();
 
 	}
 

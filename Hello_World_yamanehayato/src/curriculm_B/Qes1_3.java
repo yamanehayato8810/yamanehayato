@@ -16,7 +16,7 @@ public class Qes1_3 {
 			// 文字列を取得
 			String input = scanner.nextLine();
 			// 文字列の判定
-			if (input.length() <= 0 || input == null) {
+			if (input == null || input.length() <= 0) {
 				System.out.println("名前を入力してください");
 			} else if (input.length() > 10) {
 				System.out.println("名前を10文字以内にしてください");
@@ -28,7 +28,6 @@ public class Qes1_3 {
 			}
 		}
 
-		Scanner scanner2 = new Scanner(System.in);
 		Random random = new Random();
 
 		//手の選択肢
@@ -38,11 +37,20 @@ public class Qes1_3 {
 		System.out.println("0: グー, 1: チョキ, 2: パー");
 
 		//じゃんけんカウント回数
-		int i;
+		int i = 0;
 		//繰り返し処理
-		for (i = 1; i < hands.length; i++) {
-			System.out.print("あなたの手を選んでください: ");
-			int userHand = scanner2.nextInt();
+		while (true) {
+			i++;
+			int userHand;
+			while (true) {
+				System.out.print("あなたの手を選んでください: ");
+				userHand = scanner.nextInt();
+				if (userHand > 2) {
+					System.out.println("2以下の数字を入力してください");
+				} else {
+					break;
+				}
+			}
 			int computerHand = random.nextInt(3);
 
 			System.out.println("あなたの手: " + hands[userHand]);
@@ -51,11 +59,6 @@ public class Qes1_3 {
 			//勝敗判定
 			if (userHand == computerHand) {
 				System.out.println("DRAW あいこ もう一回しましょう！");
-			} else if ((userHand == 0 && computerHand == 1) ||
-					(userHand == 1 && computerHand == 2) ||
-					(userHand == 2 && computerHand == 0)) {
-				System.out.println("やるやん。次は俺にリベンジさせて");
-				break; //ループを終了
 			} else if (userHand == 1 && computerHand == 0) {
 				System.out.println("俺の勝ち！負けは次につながるチャンスです！ネバーギブアップ！");
 			} else if (userHand == 2 && computerHand == 1) {
@@ -63,12 +66,13 @@ public class Qes1_3 {
 			} else if (userHand == 0 && computerHand == 2) {
 				System.out.println("俺の勝ち！なんで負けたか、明日まで考えといてください。そしたら何かが見えてくるはずです");
 			} else {
-
+				System.out.println("やるやん。次は俺にリベンジさせて");
+				break; //ループを終了
 			}
 
 		}
 
-		scanner2.close();
+		scanner.close();
 
 		System.out.println("勝つまでにかかった合計回数は" + i + "回です");
 	}
