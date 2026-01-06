@@ -43,8 +43,16 @@ public class Qes1_3 {
 			i++;
 			int userHand;
 			while (true) {
-				System.out.print("あなたの手を選んでください: ");
-				userHand = scanner.nextInt();
+				while (true) {
+					System.out.print("あなたの手を選んでください: ");
+					String input = scanner.nextLine();
+					if (input.matches("\\d+")) { // 正規表現で数字のみチェック
+						userHand = Integer.parseInt(input);
+						break;
+					} else {
+						System.out.println("エラー: 数字以外が入力されました。");
+					}
+				}
 				if (userHand > 2) {
 					System.out.println("2以下の数字を入力してください");
 				} else {
