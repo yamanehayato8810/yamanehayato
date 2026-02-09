@@ -12,7 +12,8 @@ public class Animal {
 		System.out.println(animalName);
 		
 		// Q2：Dogクラスを呼び出して変数に代入し、動物の数をコンソールに出力してください。
-		int dogNumber = obj.number;
+		Dog obj2 = new Dog();
+		int dogNumber = obj2.number;
 		System.out.println(dogNumber);
 		// 現在の日時を「yyyy-MM-dd H:m:s」形式で変数に代入して、コンソールに出力してください
 		LocalDateTime now = LocalDateTime.now();
