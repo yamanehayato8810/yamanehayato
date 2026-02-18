@@ -15,6 +15,7 @@ public class Animal {
 		Dog obj2 = new Dog(3);
 		int dogNumber = obj2.number;
 		System.out.println(dogNumber);
+		
 		// 現在の日時を「yyyy-MM-dd H:m:s」形式で変数に代入して、コンソールに出力してください
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd H:m:s");
